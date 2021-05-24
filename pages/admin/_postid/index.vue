@@ -19,12 +19,12 @@ export default {
     return axios
       .get(
         "https://nuxt-app-2854d-default-rtdb.firebaseio.com/posts/" +
-          context.params.postId +
+          context.params.postid +
           ".json"
       )
       .then(res => {
         return {
-          loadedPost: { ...res.data, id: context.params.postId }
+          loadedPost: { ...res.data, id: context.params.postid }
         };
       })
       .catch(e => context.error());
