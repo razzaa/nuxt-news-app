@@ -9,6 +9,7 @@
 <script>
 import AdminPostForm from '@/components/Admin/AdminPostForm'
 export default {
+    layout: 'admin',
     components: {
         AdminPostForm
     },
@@ -24,3 +25,9 @@ export default {
     }
 }
 </script>
+<style scoped>
+.admin-post-page {
+    width: 60%;
+    margin: auto;
+}
+</style>
