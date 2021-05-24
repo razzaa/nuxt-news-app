@@ -3,7 +3,7 @@
       <PostPreview 
         v-for="post in posts"
         :key="post.id"
-        :id="1"
+        :id="post.id"
         :is-admin="isAdmin"
         :thumbnail="post.thumbnail"
         :title="post.title"

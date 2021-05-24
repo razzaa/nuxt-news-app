@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <PostList :posts="loadedPost" />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
@@ -13,31 +13,40 @@ export default {
   components: {
     PostList
   },
-  data() {
-    return {
-            loadedPost: [
-              {
-                id: '1',
-                title: 'My Awesome Post',
-                previewText: 'Super amazing, thanks for that!',
-                thumbnail: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+  asyncData(context, callback) {
+      setTimeout(() => {
+        callback(null, {
+          loadedPosts: [
+            {
+              id: '1',
+              title: 'My Awesome Post',
+              previewText: 'Super amazing, thanks for that!',
+              thumbnail: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 
-              },
-              {
-                id: '2',
-                title: 'My Awesome Post 2',
-                previewText: 'Super amazing, thanks for that!',
-                thumbnail: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-              },
-              {
-                id: '3',
-                title: 'My Awesome Post 3',
-                previewText: 'Super amazing, thanks for that!',
-                thumbnail: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-              },
-            ]
-            
-    }
+            },
+            {
+              id: '2',
+              title: 'My Awesome Post 2',
+              previewText: 'Super amazing, thanks for that!',
+              thumbnail: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+            },
+            {
+              id: '3',
+              title: 'My Awesome Post 3',
+              previewText: 'Super amazing, thanks for that!',
+              thumbnail: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+            },
+          ]
+        });
+      },1500);
+  },
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   }
+  // },
+  created() {
+    
   }
 }
 </script>
