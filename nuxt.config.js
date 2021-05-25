@@ -16,12 +16,24 @@ export default {
     ]
   },
 
+  /*
+  ** Customize the progress-bar color
+  */
+  loading: { color: '#3B8070' },
+  loadingIndicator: {
+    name: 'circle',
+    color: '#3B8070'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~assets/styles/main.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~plugins/core-components.js',
+    '~plugins/date-filter.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -33,9 +45,22 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios'
   ],
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://nuxt-app-2854d-default-rtdb.firebaseio.com',
+    credentials: false
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://nuxt-app-2854d-default-rtdb.firebaseio.com'
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   }
 }
