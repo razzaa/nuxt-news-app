@@ -18,7 +18,7 @@ export default {
   asyncData(context) {
     return axios
       .get(
-        "https://nuxt-app-2854d-default-rtdb.firebaseio.com/posts/" +
+        process.env.baseUrl + "/posts/" +
           context.params.postid +
           ".json"
       )
