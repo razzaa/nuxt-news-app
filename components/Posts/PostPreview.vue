@@ -50,7 +50,7 @@ export default {
   border: 1px solid #ccc;
   box-shadow: 0 2px 2px #ccc;
   background-color: white;
-  width: 90%;
+  width: 100%;
 }
 
 a {

@@ -40,4 +40,10 @@ export default {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 849px) {
+  .post-list a {
+    width: 100%;
+    padding-top: 15px;
+  }
+}
 </style>
