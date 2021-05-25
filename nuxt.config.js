@@ -45,7 +45,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios'
   ],
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://nuxt-app-2854d-default-rtdb.firebaseio.com',
+    credentials: false
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
